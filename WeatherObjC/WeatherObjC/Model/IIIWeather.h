@@ -13,10 +13,18 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface IIIWeather : NSObject
 
-@property NSString *city;
-@property NSNumber *number;
+@property NSString *cityName;
+@property NSNumber *temp;
 @property UIImage *image;
 
+// Parsing from JSON:
+
+- (instancetype)initWithCity:(NSString *)cityName
+                        temp:(NSNumber *)temp
+                       image:(UIImage *)image;
+
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary
+                          cityName:(NSString *)cityname;
 
 
 @end
